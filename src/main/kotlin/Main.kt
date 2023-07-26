@@ -7,7 +7,8 @@ fun calculateDiscount(purchaseAmount: Int, isRegularCustomer: Boolean): Int {
     }
 
     if (isRegularCustomer) {
-        discountAmount += (purchaseAmount * 0.01).toInt()
+        val totalDiscountedAmount = purchaseAmount - discountAmount
+        discountAmount += (totalDiscountedAmount * 0.01).toInt()
     }
 
     return purchaseAmount - discountAmount
